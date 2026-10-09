@@ -1,0 +1,17 @@
+Create a complete, modern, and beautiful single-page "Pomodoro & Focus Timer" web application.
+
+Requirements:
+1. File Structure:
+   - index.html
+   - style.css
+   - script.js
+
+2. Features:
+   - 25-minute Pomodoro timer, 5-minute Short Break, and 15-minute Long Break modes.
+   - Start, Pause, and Reset buttons with smooth interactive animations.
+   - Audio notification alert (using Web Audio API or a simple clean sound beep) when time runs out.
+   - Task List section below the timer where users can add, mark as complete, or delete daily tasks.
+   - Minimalist Dark Mode theme with modern glassmorphism UI, clean typography, and vibrant accent colors.
+   - Fully responsive design for both desktop and mobile screens.
+
+Please generate all files and code needed so it can be deployed directly to GitHub Pages.

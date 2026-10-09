@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern Pomodoro and focus timer with short and long breaks, plus a daily task list."
+    />
+    <title>Focus — Pomodoro Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+
+    <main class="app">
+      <header class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6" />
+            <path d="M12 8v4.2l2.4 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">Focus session</p>
+          <h1>Pomodoro &amp; Focus Timer</h1>
+        </div>
+      </header>
+
+      <section class="glass timer-card" aria-labelledby="mode-heading">
+        <h2 id="mode-heading" class="visually-hidden">Timer</h2>
+
+        <div class="modes" role="tablist" aria-label="Timer modes">
+          <button class="mode is-active" data-mode="pomodoro" role="tab" aria-selected="true">
+            Pomodoro
+          </button>
+          <button class="mode" data-mode="short" role="tab" aria-selected="false">
+            Short Break
+          </button>
+          <button class="mode" data-mode="long" role="tab" aria-selected="false">
+            Long Break
+          </button>
+        </div>
+
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+            <circle class="ring-track" cx="100" cy="100" r="88" />
+            <circle class="ring-progress" cx="100" cy="100" r="88" />
+          </svg>
+          <div class="time-display">
+            <p class="time" id="time" aria-live="polite">25:00</p>
+            <p class="status" id="status">Ready to focus</p>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="btn btn-primary" id="toggle" type="button">Start</button>
+          <button class="btn btn-ghost" id="reset" type="button">Reset</button>
+        </div>
+
+        <p class="session-meta">
+          Completed pomodoros today: <strong id="session-count">0</strong>
+        </p>
+      </section>
+
+      <section class="glass tasks-card" aria-labelledby="tasks-heading">
+        <div class="tasks-header">
+          <div>
+            <h2 id="tasks-heading">Today’s tasks</h2>
+            <p class="hint">Add what you want to finish this session.</p>
+          </div>
+          <span class="count-chip" id="task-progress">0 / 0</span>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label class="visually-hidden" for="task-input">New task</label>
+          <input
+            id="task-input"
+            type="text"
+            maxlength="80"
+            placeholder="Write a task and press Enter"
+            autocomplete="off"
+            required
+          />
+          <button class="btn btn-add" type="submit">Add</button>
+        </form>
+
+        <ul class="task-list" id="task-list"></ul>
+        <p class="empty" id="empty-state">No tasks yet. Add one to stay on track.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
